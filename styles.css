@@ -1,0 +1,203 @@
+:root {
+  --green: #33ff00;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 62.5%;
+  font-family: "Space Mono", monospace;
+  line-height: 1.5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#navbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2rem 4rem;
+  background-color: black;
+  width: 100%;
+  background-color: black;
+  position: fixed;
+  z-index: 1;
+}
+
+.nav-list {
+  display: flex;
+  gap: 4rem;
+  list-style: none;
+}
+
+.nav-list li,
+#profile-link {
+  font-size: 3.2rem;
+}
+
+.nav-list li a,
+#profile-link {
+  color: var(--green);
+  border: 1px solid var(--green);
+  text-decoration: none;
+  padding: 1rem 2rem;
+}
+
+#welcome-section {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: var(--green);
+  padding: 5rem 10rem;
+  height: 100vh;
+}
+
+.welcome-div h1,
+#contact h2 {
+  font-size: 6.4rem;
+}
+
+.welcome-div h1::after {
+  content: "|";
+  animation: cursor-blink 1.5s infinite;
+}
+
+.welcome-div p,
+#contact p {
+  font-size: 3.2rem;
+}
+
+@keyframes cursor-blink {
+  0%,
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+.welcome-button {
+  background-color: transparent;
+  color: var(--green);
+  border: 1px solid var(--green);
+  font-size: 2.4rem;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+}
+
+.welcome-button:hover,
+.nav-list li a:hover,
+#profile-link:hover {
+  background-color: var(--green);
+  color: black;
+  cursor: pointer;
+}
+
+#projects {
+  padding: 5rem;
+}
+
+#projects h2 {
+  font-size: 4.8rem;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.projects-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 100px;
+  row-gap: 50px;
+}
+
+.project-tile {
+  background-color: black;
+  color: var(--green);
+  text-decoration: none;
+  box-shadow: 0px 0px 20px lightgray;
+  transition: all 0.25s ease;
+}
+
+.project-tile:hover {
+  scale: calc(105%);
+  transition: all 0.25s ease;
+}
+
+.project-title {
+  font-size: 2.4rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.project-tile:hover,
+.project-title:hover::before {
+  content: "\276F_";
+}
+
+#contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: black;
+  color: var(--green);
+  padding: 5rem;
+  height: 50vh;
+}
+
+.contact-div {
+  width: 50%;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+footer {
+  background-color: black;
+  color: var(--green);
+  padding: 2rem 4rem;
+  text-align: right;
+  font-size: 3.2rem;
+}
+
+@media only screen and (max-width: 992px) {
+  #welcome-section {
+    padding: 5rem;
+  }
+
+  #contact {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+    height: auto;
+  }
+
+  .contact-div {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .projects-grid,
+  .project-tile,
+  .project-image {
+    max-width: 80vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #welcome-section {
+    height: auto;
+  }
+
+  .welcome-div {
+    margin-top: 5rem;
+  }
+}
